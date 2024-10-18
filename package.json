@@ -1,0 +1,23 @@
+{
+  "name": "upload-program",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.4.0",
+    "aws-sdk": "^2.1691.0",
+    "chromedriver": "^129.0.4",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.5",
+    "googleapis": "^144.0.0",
+    "mongodb": "^6.9.0",
+    "node-fetch": "^3.3.2",
+    "selenium-webdriver": "^4.25.0"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "pinnit-upload",
+  "private_key_id": "e9bfcdba3ad221ccce804f15033bae84764968f4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDEDWDFL15Dyg0i\n5y0ah5TZi3m3WqD1l6kh8aQBvdaq+2wxqwBQoPDKYRVPmokAdxz9LW7HvhF147Es\nbzbkPnoXbo5azeDINow0jaYYhghfN4XU5AQpjArmERwWD9z1K1srTU47YAJxj4Xl\n3XVepO2gNdhuFpF6W2ev7bBo2+4K2vWs4hE6niz6wWgx/ydVI8DKxBPZJXqmB3Q8\n/yFqjXmQPlg8eRE0eoZbYWgVs5MB50CIEPa7JURHYgWEcX6hnnsgFi6ydIGtnfMU\nvaHCIfbmU+rhhaEbJ13njUCsmcpUcv3ThzDt2/RQo6X3NvpY4DKFE5ZbgiMtT+mW\nXtjjWsS1AgMBAAECggEANfE4XwjZdu1xD9lrn5EOc4zcwIY/I1PHRX+nEJObLRBg\nhIn4XDbsCcMMigqLB4W+hCqsAGlbhIRRi1hOUh6emTPiFznuTygzC4Kt4LGAPDKa\nsCjMvGG73fF3ONrEgPCc9R0gGVYhVf2Xade1I4VdnGc0VZYAERp1PQK5NyDMLk/1\nSnxKN8xDHGCf7HV3Vo60oxdsCwwUBDjgreHdgCzHjiPAv4JFCiEbKwDkg5cw+Qv1\nEmtfDOd/iQ+/0h6C6eI6Bdms1TGb2yGuevg+rmTH8Tr1EGFwFjVJW91FjenxO77E\nZ6/Y6px7HzWWe//1aV+B5pHfLFLyuX2xAB4ijtbNQQKBgQDokr3pRRcJdLEfssTH\n8cvf9N0VkbvwpFnpbCxyKL2cOEBXiq7CX520T48WhXo2cKwLdFHdMKu7HfX/aLQQ\nqkUS2NiKnm1GzJnR03HWxRrC3zr9hI4dlZbzjnkVmg+xkeDLLsXrcfmaHN3+t/CE\n/WR4Pu18HHmaLuDP598vyhRKNwKBgQDXzOMfuT2dJ4P0uCqlLhqdkriqpu2HDKAS\nGigowRkf+KezaqYgUQb+2a1MusMtiyRKrfnpRGtGmTDWm2xD0u6XLxw2JyGQj7sT\n5pEqEhql+PkJXnbwci4Qm1AdvSM1hw6swnOTs+n+fn6zfaaGCLrxYrdl6dJCZnas\nrg6AQR8CcwKBgQDUtuoVwchJML6T1GjgywmCI65V/P3dIiTONs8L9rE9gcFvj/s4\n8kUGVsHzgk9+HV1t+IyrdsmLEeMeIICYwXL9wvGDD1W5LIb/f5oeKhbI521H1IY7\nDseKqeObW1ZBPcBRdc02A/+b8g0k3M2ShUPwKvYAzvZ1i6y420WpqvUVzwKBgH8d\nhTwOlaiYujXQte4OtkbTQkvjgE7otPF0zusSs4YNplsdGzY2BHTiLB7idE3DhGEp\nEejCEJ7JZedELgXVng0YBvovGqpYv839Js0tVN0nRyqppk4EM/Y8Rnj+DFtfbtl8\nwS/j7pWmVWPNQ+X4BoZhq74weVX7nTQiYxBRS77ZAoGBAOdag7RuNKVhUa4RJTc1\nyqgg4WsxRzWH6trNGD8f5Qa8u9hSCBWfKw16N8e4DV/ZDCRoU6TozteOlg01BCzV\n2XM0Pg1qgS1pfQ2BdEjNc/D7/4/JDGq/daFYqWzOc5KZhmpNOsPQY5j13jn5Nud+\nzTTy2UkZGRzX976FoW7Nwa2N\n-----END PRIVATE KEY-----\n",
+  "client_email": "pinnit-upload@pinnit-upload.iam.gserviceaccount.com",
+  "client_id": "112010425082104187628",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/pinnit-upload%40pinnit-upload.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
