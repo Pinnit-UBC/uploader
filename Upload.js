@@ -4,11 +4,12 @@
     const AWS = require('aws-sdk');
     const { MongoClient } = require('mongodb');
     const { Builder, By, until } = require('selenium-webdriver');
+    const chrome = require('selenium-webdriver/chrome');
     const dayjs = require('dayjs');
-    const customParseFormat = require('dayjs/plugin/customParseFormat'); // Import customParseFormat plugin
+    const customParseFormat = require('dayjs/plugin/customParseFormat');
     dayjs.extend(customParseFormat);
     const fetch = (await import('node-fetch')).default;
-    const geocoder = require('@googlemaps/google-maps-services-js'); // Google Maps Geocoding client
+    const geocoder = require('@googlemaps/google-maps-services-js');
     require('dotenv').config();
 
     // AWS S3 Configuration
@@ -83,7 +84,7 @@
             console.log('Event inserted with ID:', result.insertedId);
         } catch (error) {
             console.error('Error inserting event data into MongoDB:', error);
-            throw error; // Rethrow the error so it gets handled in the main loop
+            throw error;
         }
     }
 
@@ -100,15 +101,39 @@
         }
     }
 
-    // Selenium function to scrape Instagram image URL by filtering for larger images
+    // Retry logic for scraping Instagram image with retries in case of failure
+    async function scrapeInstagramImageWithRetries(instagramUrl, retries = 3) {
+        for (let attempt = 0; attempt < retries; attempt++) {
+            try {
+                if (attempt > 0) {
+                    console.log(`Waiting 5 seconds before retrying...`);
+                    await new Promise(resolve => setTimeout(resolve, 5000)); // 5-second delay between retries
+                }
+                return await scrapeInstagramImage(instagramUrl);
+            } catch (error) {
+                console.error(`Attempt ${attempt + 1} failed. Retrying...`, error);
+                if (attempt === retries - 1) throw error; // Throw error if max retries reached
+            }
+        }
+    }
+
+    // Selenium function to scrape Instagram image URL
     async function scrapeInstagramImage(instagramUrl) {
-        let driver = await new Builder().forBrowser('chrome').build();
+        // Set Chrome options for headless mode and custom user data directory
+        let options = new chrome.Options();
+        options.addArguments('--headless');  // Run Chrome in headless mode
+        options.addArguments('--no-sandbox');
+        options.addArguments('--disable-dev-shm-usage');
+        options.addArguments('--disable-gpu');
+        options.addArguments('--disable-software-rasterizer');
+
+        let driver = await new Builder().forBrowser('chrome').setChromeOptions(options).build();
         try {
             await driver.get(instagramUrl);
 
             const postImageElement = await driver.wait(
                 until.elementLocated(By.css('article img[srcset], article img.FFVAD')),
-                15000 // Set a timeout of 15 seconds
+                3000 // Increase timeout to 30 seconds
             );
             const imageUrl = await postImageElement.getAttribute('src');
 
@@ -195,7 +220,7 @@
 
                 if (referenceLink) {
                     try {
-                        const imageUrl = await scrapeInstagramImage(referenceLink);
+                        const imageUrl = await scrapeInstagramImageWithRetries(referenceLink);
                         const fileName = `${eventTitle.replace(/\s+/g, '_')}.jpg`;
                         const s3Url = await uploadImageToS3(imageUrl, fileName);
 
